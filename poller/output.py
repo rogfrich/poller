@@ -12,7 +12,7 @@ class Output:
     def __init__(self, entrants, voting_deadline):
         self.entrants = entrants
         self.voting_deadline = voting_deadline
-        self.environment = Environment(loader=FileSystemLoader("."))
+        self.environment = Environment(loader=FileSystemLoader("./poller/template/"))
         self.template = self.environment.get_template("template.txt")
 
     def render(self):
