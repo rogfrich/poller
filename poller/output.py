@@ -2,7 +2,6 @@
 Create a formatted text output that can be easily pasted into a Discourse post to create a poll.
 """
 from jinja2 import Environment, FileSystemLoader
-from poller import config
 
 
 class Output:
