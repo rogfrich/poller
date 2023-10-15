@@ -2,7 +2,7 @@ import copy
 import requests
 
 
-class Poll:
+class DiscourseThread:
     """
     This class represents a topic in Discourse dedicated to a particular competition. When initialised,
     it will use the supplied topic ID to get data about the topic and its constituent posts, and will
@@ -73,6 +73,6 @@ class Poll:
         return f"Poll object with {len(self.all_entrants)} entries"
 
 
-if __name__ == '__main__':
-    poll = Poll('984627')
+if __name__ == "__main__":
+    poll = DiscourseThread("984627")
     print(poll)

@@ -1,1 +1,1 @@
-from .poll import Poll
+from .discourse_thread import DiscourseThread

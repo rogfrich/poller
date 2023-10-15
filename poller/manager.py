@@ -1,4 +1,4 @@
-from .poll import Poll
+from .discourse_thread import DiscourseThread
 from .output import Output
 
 
@@ -10,7 +10,7 @@ class Manager:
         self.output = self._get_rendered_output()
 
     def _get_entrants(self):
-        poll = Poll(self.topic_id)
+        poll = DiscourseThread(self.topic_id)
         return poll.all_entrants
 
     def _get_rendered_output(self):

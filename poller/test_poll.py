@@ -1,17 +1,10 @@
 """
-Tests for poller
+Tests for discourse_thread.py
 """
 import pytest
 
 # Basic smoke tests - does everything hang together?
 
+
 def test_imports():
-    from .poll import Poll
-
-
-
-
-
-
-
-
+    from .discourse_thread import DiscourseThread
