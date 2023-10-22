@@ -1,4 +1,4 @@
-from poller.output import Output
+from .output import Output
 import os
 
 
