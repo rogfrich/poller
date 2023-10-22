@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "poller"
-version = "0.0.0"
+version = "0.2.0"
 description = "A CLI app to parse a Discourse thread and construct a poll"
 readme = "README.md"
 authors = [{ name = "Rogfrich", email = "info@example.com" }]
 
-dependencies = []
+dependencies = ["requests", "jinja2"]
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
