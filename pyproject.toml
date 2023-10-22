@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "poller"
-version = "0.2.0"
+version = "0.3.0"
 description = "A CLI app to parse a Discourse thread and construct a poll"
 readme = "README.md"
 authors = [{ name = "Rogfrich", email = "info@example.com" }]
