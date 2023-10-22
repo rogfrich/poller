@@ -1,7 +1,19 @@
 """
 Create a formatted text output that can be easily pasted into a Discourse post to create a poll.
 """
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FunctionLoader
+
+
+def template(template):
+    return """Please vote for your three favourite photos, using whatever criteria you feel is best. All Dopers are welcome to vote - you don’t need to have submitted a photo. **You cannot vote for your own photo**. You get three votes (and the poll will make you use all of them).
+
+The voting deadline is **9pm UK time on {{voting_deadline}}**.
+
+[poll type=multiple results=always min=3 max=3 chartType=bar]
+{% for entrant in entrants -%}
+* {{entrant}}
+{% endfor -%}
+[/poll]"""
 
 
 class Output:
@@ -12,9 +24,10 @@ class Output:
     def __init__(self, entrants, voting_deadline):
         self.entrants = entrants
         self.voting_deadline = voting_deadline
-        self.environment = Environment(loader=FileSystemLoader("./poller/template/"))
-        self.template = self.environment.get_template("template.txt")
+        self.environment = Environment(loader=FunctionLoader(template))
+        self.template = self.environment.get_template("template")
 
+    #
     def render(self):
         return self.template.render(
             entrants=self.entrants, voting_deadline=self.voting_deadline

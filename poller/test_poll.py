@@ -7,7 +7,7 @@ import pytest
 
 
 def test_imports():
-    from poller.discourse_thread import DiscourseThread
+    from .discourse_thread import DiscourseThread
 
     test_poll = DiscourseThread("984627")
     assert test_poll.all_entrants[0] == "TwoCarrotSnowman"
